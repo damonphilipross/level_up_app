@@ -10,10 +10,85 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_082514) do
+ActiveRecord::Schema.define(version: 2019_03_04_103544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "badges", force: :cascade do |t|
+    t.integer "badge_points"
+    t.string "badge_name"
+    t.string "icon_name"
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "challenges", force: :cascade do |t|
+    t.date "start_date"
+    t.integer "duration_days"
+    t.integer "cost"
+    t.string "photo_url"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_challenges_on_user_id"
+  end
+
+  create_table "daily_goal_tasks", force: :cascade do |t|
+    t.string "description"
+    t.bigint "daily_goal_id"
+    t.integer "task_points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["daily_goal_id"], name: "index_daily_goal_tasks_on_daily_goal_id"
+  end
+
+  create_table "daily_goals", force: :cascade do |t|
+    t.bigint "challenge_id"
+    t.integer "day"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_daily_goals_on_challenge_id"
+  end
+
+  create_table "participant_badges", force: :cascade do |t|
+    t.bigint "badge_id"
+    t.bigint "participant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["badge_id"], name: "index_participant_badges_on_badge_id"
+    t.index ["participant_id"], name: "index_participant_badges_on_participant_id"
+  end
+
+  create_table "participant_photos", force: :cascade do |t|
+    t.string "photo_url"
+    t.bigint "participant_id"
+    t.bigint "daily_goal_task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["daily_goal_task_id"], name: "index_participant_photos_on_daily_goal_task_id"
+    t.index ["participant_id"], name: "index_participant_photos_on_participant_id"
+  end
+
+  create_table "participants", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "challenge_id"
+    t.integer "total_points"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_participants_on_challenge_id"
+    t.index ["user_id"], name: "index_participants_on_user_id"
+  end
+
+  create_table "task_results", force: :cascade do |t|
+    t.bigint "participant_id"
+    t.bigint "daily_goal_task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["daily_goal_task_id"], name: "index_task_results_on_daily_goal_task_id"
+    t.index ["participant_id"], name: "index_task_results_on_participant_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +98,21 @@ ActiveRecord::Schema.define(version: 2019_03_04_082514) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
+    t.string "handle"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "challenges", "users"
+  add_foreign_key "daily_goal_tasks", "daily_goals"
+  add_foreign_key "daily_goals", "challenges"
+  add_foreign_key "participant_badges", "badges"
+  add_foreign_key "participant_badges", "participants"
+  add_foreign_key "participant_photos", "daily_goal_tasks"
+  add_foreign_key "participant_photos", "participants"
+  add_foreign_key "participants", "challenges"
+  add_foreign_key "participants", "users"
+  add_foreign_key "task_results", "daily_goal_tasks"
+  add_foreign_key "task_results", "participants"
 end
