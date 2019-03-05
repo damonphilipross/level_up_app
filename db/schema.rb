@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_033444) do
+ActiveRecord::Schema.define(version: 2019_03_05_034920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_033444) do
   create_table "daily_goal_tasks", force: :cascade do |t|
     t.string "description"
     t.bigint "daily_goal_id"
-    t.integer "task_points"
+    t.integer "task_points", default: 1
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["daily_goal_id"], name: "index_daily_goal_tasks_on_daily_goal_id"
