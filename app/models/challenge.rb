@@ -1,6 +1,8 @@
 class Challenge < ApplicationRecord
   belongs_to :user
-  has_many :daily_goal
+  has_many :daily_goal, dependent: :destroy
+  has_many :participants, dependent: :destroy
+  has_many :daily_goal_tasks, dependent: :destroy
 
   validates :start_date, presence: true
   validates :description, presence: true
