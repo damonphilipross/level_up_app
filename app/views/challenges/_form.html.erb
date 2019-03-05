@@ -1,31 +1,33 @@
+
 <%= simple_form_for(@challenge) do |f| %>
 <h3>Page one: The Basics </h3>
 
     <%= f.error_notification %>
 
-    <%= f.input :title, label: 'Challenge Name' %>
-    <%= f.input :location, label: 'Location' %>
-
-
-    <%= f.input :detail, label: 'Challenge details', placeholder: 'descripe your amazing challenge...' %>
+    <%= f.input :title, label: 'Challenge Name', placeholder: "Kim's 30 Day Body Tranformation Challenge" %>
+    <%= f.input :start_date, as: :date, html5: true, label: 'Start Date', placeholder: "Kim's 30 Day Body Tranformation Challenge" %>
+    <%= f.input :description, label: 'Challenge details', placeholder: 'descripe your challenge...' %>
 
 
 
-    <%= f.input :duration, label: 'Challenge duration', placeholder: 'days' %>
+    <%= f.input :duration_days, label: 'Challenge duration', placeholder: 'How many days?' %>
 
     <%= f.input :cost, label: 'Buy In', placeholder: '$' %>
+    <%= f.input :photo_url, label: 'Challenge Image', placeholder: 'insert url' %>
 
-    <%= f.input :metric_operator, label: "Challenge ", collection: ['at least', 'less then', 'up to', 'greater then'] %>
-
-    <%= f.input :metric_value, label: '', placeholder: '0-100', range: 0..100 %>
-
-    <%= f.input :metric_verb, label: 'select your challenge item;', collection: ['push ups', 'hours of coding', 'meditations', 'table tennis matches'] %>
-
-    <%= f.input :metric_frequency, label: 'per', collection: ['day', 'week', 'hour', 'month'] %>
-
-    <%= f.input :avatar, as: :file, label: 'Upload your inspirational challenge image' %>
 
 
     <%= f.button :submit, class: "btn-warning" %>
     <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
   <% end %>
+
+
+
+
+
+
+
+
+
+
+

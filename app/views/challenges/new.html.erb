@@ -1,14 +1,14 @@
-<h1>Challenges#new</h1>
-<p>Find me in app/views/challenges/new.html.erb</p>
 
-<div class="col-xs-12 col-sm-6" >
+<div class="form_container">
+  <div class="col-xs-12 col-sm-6" >
 
-  <h1 id='challenge_header'>Create Your Challenge!</h1>
+    <h3 id='challenge_header'>Create Your Challenge!</h3>
 
-  <div id='challenge_form'>
-  <%= render 'form', challenge: @challenge %>
+    <div id='challenge_form'>
+    <%= render 'form', challenge: @challenge %>
 
-  <%= link_to 'Back', challenges_path %>
+    <%= link_to 'Back', challenges_path %>
+    </div>
   </div>
 </div>
 
