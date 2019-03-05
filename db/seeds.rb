@@ -12,8 +12,8 @@ Badge.destroy_all
 Participant.destroy_all
 Challenge.destroy_all
 User.destroy_all
-DailyGoalTask.destroy_all
 DailyGoal.destroy_all
+DailyGoalTask.destroy_all
 ParticipantBadge.destroy_all
 ParticipantPhoto.destroy_all
 TaskResult.destroy_all
@@ -36,7 +36,7 @@ puts "creating challenges creating daily goals"
     title: "#{rand(50)} day #{metric_verb} challenge",
     description: Faker::Quote.yoda,
     start_date: Faker::Date.forward(50),
-    duration_days: rand(30),
+    duration_days: rand(1..30),
     cost: rand(500),
     photo_url: Faker::LoremPixel.image("600x400", false, 'sports'),
     price_cents: rand(50000),
@@ -105,7 +105,7 @@ Badge.create!(
 puts "amalgamating the badges with rando users"
 
 5.times do
-  participant_badge = Participant_badge.new
+  participant_badge = ParticipantBadge.new
   participant_badge.participant = Participant.all.sample
   participant_badge.badge = Badge.all.sample
   participant_badge.save!
