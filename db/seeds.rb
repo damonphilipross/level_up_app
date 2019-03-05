@@ -34,22 +34,34 @@ puts "creating challenges"
   metric_verb = Faker::Verb.base
   challenge = Challenge.new(
     title: "#{rand(50)} day #{metric_verb} challenge",
-    tag: Challenge::Tag.sample,
-    detail: Faker::Quote.yoda,
+    description: Faker::Quote.yoda,
     start_date: Faker::Date.forward(50),
-    duration: rand(50),
-    cost: rand(500.00),
-    metric_verb: metric_verb,
-    metric_value: rand(50.0),
-    metric_frequency: ["day", "week", "month", "decade"].sample,
-    metric_operator: ["greater than", "less than", "equal to"].sample,
-    latitude: Faker::Address.latitude,
-    longitude: Faker::Address.longitude,
-    location: Faker::Address.full_address)
+    duration_days: rand(30),
+    cost: rand(500),
+    photo_url: Faker::LoremPixel.image("600x400", false, 'sports')
+    price_cents: rand(50000),
   challenge.user = User.first(3).sample
   challenge.save!
-
+  i = 0
+  challenge.duration_days.times do
+    i = i + 1
+    daily_goal = DailyGoal.new(
+      day: i,
+    )
+    daily_goal.challenge = challenge
+    daily_goal.save
+    daily_goal_tasks = DailyGoalTask.new(
+      description: Faker::Company.bs,
+      task_points: rand(20),
+    )
+    daily_goal_tasks.daily_goal = daily_goal
+    daily_goal_tasks.save
+  end
 end
+
+puts "creating daily goals"
+
+
 puts "creating participations"
 User.last(10).each do |user|
   2.times do
@@ -58,6 +70,45 @@ User.last(10).each do |user|
     participant.challenge = Challenge.all.sample
     participant.save!
   end
+end
+
+puts "creating badges"
+Badge.create (
+    badge_points: rand(20),
+    badge_name: "#{Faker::Games::LeagueOfLegends.rank} Badge",
+    icon_name: "https://discordemoji.com/assets/emoji/fire.png",
+    color: Faker::Color.hex_color,
+)
+Badge.create (
+    badge_points: rand(20),
+    badge_name: "#{Faker::Games::LeagueOfLegends.rank} Badge",
+    icon_name: "https://discordemoji.com/assets/emoji/Cheers.gif",
+    color: Faker::Color.hex_color,
+)
+Badge.create (
+    badge_points: rand(20),
+    badge_name: "#{Faker::Games::LeagueOfLegends.rank} Badge",
+    icon_name: "https://discordemoji.com/assets/emoji/SansDab.png",
+    color: Faker::Color.hex_color,
+)
+Badge.create (
+    badge_points: rand(20),
+    badge_name: "#{Faker::Games::LeagueOfLegends.rank} Badge",
+    icon_name: "https://discordemoji.com/assets/emoji/CatHeartEyes.png",
+    color: Faker::Color.hex_color,
+)
+Badge.create (
+    badge_points: rand(20),
+    badge_name: "#{Faker::Games::LeagueOfLegends.rank} Badge",
+    icon_name: "https://discordemoji.com/assets/emoji/VictoryRoyale.png",
+    color: Faker::Color.hex_color,
+)
+
+5.times do
+  participant_badge = Participant_badge.new
+  participant_badge.participant = Participant.all.sample
+  participant_badge.badge = Badge.all.sample
+  participant_badge.save
 end
 
 puts "seed complete"
