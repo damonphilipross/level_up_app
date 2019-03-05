@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'challenges/new'
+  get 'challenges/create'
+  get 'challenges/edit'
+  get 'challenges/update'
+  get 'challenges/destroy'
   devise_for :users
   root to: 'pages#home'
   resources :challenges, only: [ :create, :edit, :index, :new ] do
