@@ -1,0 +1,31 @@
+
+<%= simple_form_for(@challenge) do |f| %>
+<h3>Page one: The Basics </h3>
+
+    <%= f.error_notification %>
+
+  <div class="page1">
+    <%= f.input :title, label: 'Challenge Name', placeholder: "Kim's 30 Day Body Tranformation Challenge" %>
+     <%= f.input :start_date, as: :date, html5: true, label: 'Start Date', placeholder: "Kim's 30 Day Body Tranformation Challenge" %>
+     <%= f.input :description, label: 'Challenge details', placeholder: 'descripe your challenge...' %>
+     <%= f.input :duration_days, label: 'Challenge duration', placeholder: 'How many days?' %>
+  </div>
+
+  <div>
+    <%= f.input :cost, label: 'Buy In', placeholder: '$' %>
+    <%= f.input :photo_url, label: 'Challenge Image', placeholder: 'insert url' %>
+    <%= f.button :submit, class: "btn-warning" %>
+    <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+  </div>
+  <% end %>
+
+
+
+
+
+
+
+
+
+
+

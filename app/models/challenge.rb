@@ -6,4 +6,5 @@ class Challenge < ApplicationRecord
   validates :description, presence: true
   validates :title, presence: true
   validates :duration_days, numericality: { only_integer: true, greater_than: 0 }
+  monetize :price_cents
 end
