@@ -1,2 +1,14 @@
 <h1>Challenges#new</h1>
 <p>Find me in app/views/challenges/new.html.erb</p>
+
+<div class="col-xs-12 col-sm-6" >
+
+  <h1 id='challenge_header'>Create Your Challenge!</h1>
+
+  <div id='challenge_form'>
+  <%= render 'form', challenge: @challenge %>
+
+  <%= link_to 'Back', challenges_path %>
+  </div>
+</div>
+
