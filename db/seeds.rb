@@ -62,7 +62,7 @@ end
 
 puts "creating participations"
 User.last(10).each do |user|
-  2.times do
+  5.times do
     participant = Participant.new
     participant.user = user
     participant.challenge = Challenge.all.sample
