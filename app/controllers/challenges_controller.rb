@@ -5,6 +5,9 @@ class ChallengesController < ApplicationController
 
   def create
     @challenge = Challenge.new(challenge_params)
+    @challenge.user_id = current_user.id
+    @challenge.save
+    redirect_to root_path
   end
 
   def edit
