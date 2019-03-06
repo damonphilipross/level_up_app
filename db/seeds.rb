@@ -8,13 +8,13 @@
 require 'faker'
 
 puts "cleaning all tables"
-Badge.destroy_all
 Participant.destroy_all
 Challenge.destroy_all
 User.destroy_all
 DailyGoal.destroy_all
 DailyGoalTask.destroy_all
 ParticipantBadge.destroy_all
+Badge.destroy_all
 ParticipantPhoto.destroy_all
 TaskResult.destroy_all
 puts "starting seed"
