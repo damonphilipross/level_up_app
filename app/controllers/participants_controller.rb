@@ -1,6 +1,7 @@
 class ParticipantsController < ApplicationController
   def index
-    @participants = Participants.where(challenge_id: params[:challenge_id])
+    @challenge = Challenge.find(params[:challenge_id])
+    @participants = Participant.where(challenge_id: params[:challenge_id])
   end
 
   def new
