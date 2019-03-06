@@ -1,24 +1,20 @@
 class ParticipantsController < ApplicationController
-  before_action :set_participant, only: [:show, :update, :destory]
+  def index
+    @participants = Participants.where(challenge_id: params[:challenge_id])
+  end
 
   def new
     @participant = Participant.new
   end
 
   def create
-    new_session = Participant.new
-    new_session.challenge = Challenge.find(params[:challenge_id])
-    new_session.user = current_user
-    new_session.save
-    redirect_to users_profile_path
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+    @participant = Participant.new
+    @participant.challenge = Challenge.find(params[:challenge_id])
+    @participant.user = current_user
+    if @participant.save
+      redirect_challenge_participants_path
+    else
+      render 'new'
+    end
   end
 end
