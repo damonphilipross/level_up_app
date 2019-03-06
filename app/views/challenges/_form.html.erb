@@ -1,24 +1,52 @@
 
 <%= simple_form_for(@challenge) do |f| %>
-<h3>Page one: The Basics </h3>
-
     <%= f.error_notification %>
 
-  <div class="page1">
-    <%= f.input :title, label: 'Challenge Name', placeholder: "Kim's 30 Day Body Tranformation Challenge" %>
-     <%= f.input :start_date, as: :date, html5: true, label: 'Start Date', placeholder: "Kim's 30 Day Body Tranformation Challenge" %>
-     <%= f.input :description, label: 'Challenge details', placeholder: 'descripe your challenge...' %>
-     <%= f.input :duration_days, label: 'Challenge duration', placeholder: 'How many days?' %>
+  <div id="page1">
+    <h3> Create Challenge </h3>
+      <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40"
+           aria-valuemin="0" aria-valuemax="100" style="width:4%"> 0% Complete
+        </div>
+      </div>
+    <h4>Page one: The Basics </h4>
+    <%= f.input :title, label: 'Challenge Name',
+    placeholder: "max. 25 characters", input_html: {maxlength: 25 } %>
+    <%= f.input :description, input_html: {rows: 8, maxlength: 3000 }, label: 'Challenge details', placeholder: 'max. 3000 characters, we recommend around 1000 characters' %>
   </div>
 
-  <div>
+  <div id="page2" style="display:none">
+    <br/>
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50"
+           aria-valuemin="0" aria-valuemax="100" style="width:50%"> 50% Complete
+      </div>
+    </div>
+    <br/>
+    <h4>Page two: The Basics </h4>
+    <%= f.input :start_date, as: :date, html5: true, label: 'Start Date', placeholder: "Kim's 30 Day Body Tranformation Challenge" %>
+    <%= f.input :duration_days, label: 'Challenge duration', placeholder: 'How many days?' %>
+  </div>
+
+  <div id="page3" style="display:none">
+    <div class="progress">
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80"
+           aria-valuemin="0" aria-valuemax="100" style="width:80%"> 80% Complete
+      </div>
+    </div>
     <%= f.input :cost, label: 'Buy In', placeholder: '$' %>
     <%= f.input :photo_url, label: 'Challenge Image', placeholder: 'insert url' %>
     <%= f.button :submit, class: "btn-warning" %>
     <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
-    <%= f.button :button, "Next", class: "btn-outline-secondary", id: "next_button" %>
-  </div>
   <% end %>
+  </div>
+
+  <button type="button" name="next_button1" class="btn-success" id="next_button1">Next</button>
+  <button type="button" style="display:none" name="next_button2" class="btn-success" id="next_button2">Next
+  </button>
+  <button type="button" style="display:none"name="next_button3" class="btn-success" id="next_button3">Next
+  </button>
+
 
 
 
