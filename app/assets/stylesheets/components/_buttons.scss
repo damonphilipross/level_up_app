@@ -6,9 +6,7 @@
   align-items: center;
   justify-content: space-around;
 }
-.upvote_button{
-  background: #FF0040;
-}
+
 .login_signup_button{
   position: static;
 
@@ -38,5 +36,11 @@
   text-align: left;
 }
 
+.upvote-btn{
+  background:none;
 
-
+  border:none;
+}
+.fa-arrow-up{
+  color: #FF0040;
+}
