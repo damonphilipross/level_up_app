@@ -8,12 +8,12 @@
 require 'faker'
 
 puts "cleaning all tables"
+ParticipantBadge.destroy_all
 Participant.destroy_all
 Challenge.destroy_all
 User.destroy_all
 DailyGoal.destroy_all
 DailyGoalTask.destroy_all
-ParticipantBadge.destroy_all
 Badge.destroy_all
 ParticipantPhoto.destroy_all
 TaskResult.destroy_all
@@ -23,10 +23,12 @@ user = User.create(handle: "damon_d", email: "damon@damon.com", password: "passw
 user = User.create(handle: "ben_b", email: "ben@ben.com", password: "password", influencer: true)
 puts "creating users"
 10.times do
+
   user = User.create!(
     handle: Faker::Internet.username,
     email: Faker::Internet.email,
-    password: "password")
+    password: "password",
+    photo: "http://i.pravatar.cc/300")
   # user.save
 end
 puts "creating challenges creating daily goals"
