@@ -5,9 +5,12 @@ class ChallengesController < ApplicationController
 
   def create
     @challenge = Challenge.new(challenge_params)
-    @challenge.user_id = current_user.id
-    @challenge.save
-    redirect_to root_path
+    @challenge.user = current_user
+    if @challenge.save
+      redirect_to new_challenge_daily_goal_path(@challenge)
+    else
+      render :new
+    end
   end
 
   def edit
