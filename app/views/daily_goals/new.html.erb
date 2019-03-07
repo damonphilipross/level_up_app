@@ -1,11 +1,11 @@
 <h1>Add daily goals</h1>
 
 <%=  simple_form_for :daily_goals, url: challenge_daily_goals_path(@challenge) do |f| %>
-<%= f.simple_fields_for :daily_goal_task_1 do |p| %>
+  <%= f.simple_fields_for :daily_goal_task_1 do |p| %>
     <%= p.input :description %>
     <%= p.input :task_points %>
   <% end %>
-<%= f.simple_fields_for :daily_goal_task_2 do |p| %>
+  <%= f.simple_fields_for :daily_goal_task_2 do |p| %>
     <%= p.input :description %>
     <%= p.input :task_points %>
   <% end %>
