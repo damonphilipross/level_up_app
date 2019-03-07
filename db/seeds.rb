@@ -28,7 +28,7 @@ puts "creating users"
     handle: Faker::Internet.username,
     email: Faker::Internet.email,
     password: "password",
-    photo: "http://i.pravatar.cc/300")
+    photo: Faker::Avatar.image)
   # user.save
 end
 puts "creating challenges creating daily goals"

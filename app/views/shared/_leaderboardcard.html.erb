@@ -1,18 +1,19 @@
 
 
+<% @participants.each do |participant| %>
 
-    <% @participants.each do |participant| %>
-      <div class="col-xs-12">
-        <div class="card">
-          <div class="card-block">
-            <div class="card-body">
-              <li class="card-title"><%= participant.user.handle %>: Total points:<%= participant.total_points %>
-               <% participant.badges.each do |badge| %>
-                <span>Badge Name: <%= badge.badge_name %>: <img src=<%= badge.icon_name %>></span>
-              <% end %>
-              </li>
-            </div>
-          </div>
-        </div>
+    <div class="notification">
+      <img src=<%= participant.user.photo %> class="avatar-large"/>
+      <div class="notification-content">
+        <p><strong><%= participant.user.handle %></strong></p>
+        <p> total points:<%= participant.total_points %></p>
+        <% participant.badges.each do |badge| %>
+          <img src=<%= badge.icon_name %>>
+        <% end %>
       </div>
-      <% end %>
+      <div class="notification-actions">
+        <a href="#"><i class="fas fa-plus"></i></a>
+      </div>
+    </div>
+
+<% end %>
