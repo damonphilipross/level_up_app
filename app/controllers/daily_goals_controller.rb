@@ -28,6 +28,7 @@ class DailyGoalsController < ApplicationController
       end
       counter += 1
     end
+    redirect_to root_path
   end
 
   private

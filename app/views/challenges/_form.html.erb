@@ -14,13 +14,14 @@
     placeholder: "max. 25 characters", input_html: {maxlength: 25 } %>
     <%= f.input :description, input_html: {rows: 8, maxlength: 3000 }, label: 'Challenge details', placeholder: 'max. 3000 characters, we recommend around 1000 characters' %>
     <button type="button" name="next_button1" class="btn-success" id="next_button1">Next</button>
+    <%= link_to 'Back', :back %>
   </div>
 
   <div id="page2" style="display:none">
     <br/>
     <div class="progress">
-      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50"
-           aria-valuemin="0" aria-valuemax="100" style="width:50%"> 50% Complete
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="30"
+           aria-valuemin="0" aria-valuemax="100" style="width:50%"> 30% Complete
       </div>
     </div>
     <br/>
@@ -29,20 +30,22 @@
     <%= f.input :duration_days, label: 'Challenge duration', placeholder: 'How many days?' %>
     <button type="button" name="next_button2" class="btn-success" id="next_button2">Next
     </button>
+    <%= link_to 'Back', :back %>
   </div>
 
   <div id="page3" style="display:none">
     <br/>
     <div class="progress">
-      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80"
-           aria-valuemin="0" aria-valuemax="100" style="width:80%"> 80% Complete
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60"
+           aria-valuemin="0" aria-valuemax="100" style="width:60%"> 60% Complete
       </div>
     </div>
-    <%= f.input :price_cents, label: 'Buy In', placeholder: '$' %>
-    <%= f.input :photo_url, label: 'Challenge Image', placeholder: 'insert url' %>
-    <%= f.button :submit, 'Next', class: "btn-success" %>
-    <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+      <%= f.input :price_cents, label: 'Buy In', placeholder: '$' %>
+      <%= f.input :photo_url, label: 'Challenge Image', placeholder: 'insert url' %>
+      <%= f.button :submit, 'Next', class: "btn-success" %>
+      <%= link_to 'Back', :back %>
   </div>
+
 
   <% end %>
 
