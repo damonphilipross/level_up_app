@@ -1,15 +1,17 @@
-
+<div id='home_login'>
+  <img src=<%= @challenge.photo_url %> class="influencer_img">
+  <div>
+    <a class='login_signup_button' <%= link_to 'LOGIN / SIGN UP', new_user_session_path %> </a>
+  </div>
+</div>
 
 <div class="container">
-  <img src=<%= @challenge.photo_url %>>
   <h1>the LEADERboard</h1>
-  <div class="card-deck">
+    <%= render "shared/challengeShow" %>
     <div class="row">
-      <h2 class="card-title"><%= @challenge.title %></h2>
-      <h5 class="card-title"><%= @challenge.description %></h5>
       <ol>
         <%= render "shared/leaderboardcard" %>
-    </ol>
+      </ol>
     </div>
   </div>
 </div>
