@@ -1,6 +1,6 @@
 
-
-<% @participants.each do |participant| %>
+<div id="leaderboard-canvas">
+  <% @participants.each do |participant| %>
 
     <div class="notification">
       <img src=<%= participant.user.photo %> class="avatar-large"/>
@@ -16,4 +16,5 @@
       </div>
     </div>
 
-<% end %>
+  <% end %>
+</div>
