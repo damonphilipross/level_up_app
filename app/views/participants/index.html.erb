@@ -1,0 +1,14 @@
+<div class="container">
+  <img src=<%= @challenge.photo_url %>>
+  <h1>the LEADERboard</h1>
+  <div class="card-deck">
+    <div class="row">
+      <h2 class="card-title"><%= @challenge.title %></h2>
+      <h5 class="card-title"><%= @challenge.description %></h5>
+      <ol>
+        <%= render "shared/leaderboard" %>
+    </ol>
+    </div>
+  </div>
+</div>
+
