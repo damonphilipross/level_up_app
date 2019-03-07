@@ -28,14 +28,6 @@ class DailyGoalsController < ApplicationController
       end
       counter += 1
     end
-
-    raise
-    # params.each do |key, value|
-    #   value.each do |k, v|
-    #     @daily_goal_task = DailyGoalTask.new(v)
-    #     @daily_goal_task.save!
-    #   end
-    # end
   end
 
   private

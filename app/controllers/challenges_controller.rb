@@ -32,7 +32,8 @@ class ChallengesController < ApplicationController
       :start_date,
       :duration_days,
       :price_cents,
-      :photo_url
+      :photo_url,
+      :description
     )
   end
 end
