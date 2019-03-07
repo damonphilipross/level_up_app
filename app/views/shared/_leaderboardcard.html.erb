@@ -6,7 +6,7 @@
       <img src=<%= participant.user.photo %> class="avatar-large"/>
       <div class="notification-content">
         <p><strong><%= participant.user.handle %></strong></p>
-        <p> total points:<%= participant.total_points %></p>
+        <p class="upboats"> total points:<%= participant.total_points %></p>
         <% participant.badges.each do |badge| %>
           <img src=<%= badge.icon_name %>>
         <% end %>
