@@ -1,6 +1,15 @@
 #screen{
-  background: linear-gradient(transparent, rgb(20,20,20));
+  background: rgba(40,40,40,1);
   background-size: cover;
+  z-index: -5;
+}
+.image-gradient{
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), rgba(40,40,40,.5), rgba(40,40,40,1));
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .influencer_img{
   background-size: cover !important;
@@ -9,16 +18,16 @@
   // justify-content: center;
   // object-fit: cover;
   position: fixed;
-  max-width: 100;
+  // max-width: 100;
   // width: 100%;
   // background-size: contain;
   // background-repeat: no-repeat;
   // object-fit: scale-down;
-  z-index: -1;
+  z-index: 0;
   top: 0px;
 }
 #pad{
-  height: 400px;
+  height: 350px;
 }
 .container{
   width: 90%;
@@ -56,9 +65,10 @@
   // position: relative;
   vertical-align: center;
   h4{
+    font-family: 'roboto';
     padding: 10px 90px 0px 10px;
-    font-size: 30px;
-    font-weight: lighter;
+    font-size: 25px;
+    font-weight: !important lighter;
   }
   p{
     padding: 0px 10px;
