@@ -1,0 +1,6 @@
+function refreshForm(innerHTML) {
+  const newUpvote = document.getElementById("leader-board-list");
+  newUpvote.innerHTML = innerHTML;
+}
+
+refreshForm("<%=j render 'shared/leaderboardcard' %>");

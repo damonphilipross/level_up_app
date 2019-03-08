@@ -24,10 +24,12 @@ class ParticipantsController < ApplicationController
     @participant = Participant.find(params[:button])
     @participant.total_points += 1
     if @participant.save
+      @participants = Participant.where(challenge_id: params[:challenge_id]).order(total_points: :desc)
       respond_to do |format|
         format.html { redirect_to challenge_participants }
         format.js
       end
     end
+
   end
 end
