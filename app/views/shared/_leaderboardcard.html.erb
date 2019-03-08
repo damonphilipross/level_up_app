@@ -1,6 +1,6 @@
 
-
-<% @participants.each do |participant| %>
+<div id="leaderboard-canvas">
+  <% @participants.each do |participant| %>
 
     <div class="notification">
       <img src=<%= participant.user.photo %> class="avatar-large"/>
@@ -15,4 +15,7 @@
           <%= button_tag "<i class='fas fa-arrow-up'></i>".html_safe, class: "upvote-btn",  value: "#{participant.id}"%>
         <% end %>
     </div>
-<% end %>
+
+  <% end %>
+</div>
+

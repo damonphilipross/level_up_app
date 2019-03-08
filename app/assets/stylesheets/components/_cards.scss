@@ -1,23 +1,77 @@
-
-.influencer_img{
-  color: white;
-  text-align: center;
-  height: calc(100vh - 30px);
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-
-  // height: 100vp;
-  // width: 100%;
+#screen{
+  background: rgba(40,40,40,1);
+  background-size: cover;
+  z-index: -5;
+}
+.image-gradient{
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), rgba(40,40,40,.5), rgba(40,40,40,1));
   position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.influencer_img{
+  background-size: cover !important;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // object-fit: cover;
+  position: fixed;
+  // max-width: 100;
+  // width: 100%;
   // background-size: contain;
   // background-repeat: no-repeat;
   // object-fit: scale-down;
-  // position: fixed; /* Set the navbar to fixed position */
-  z-index: -1;
-  // top: 0;
+  z-index: 0;
+  top: 0px;
 }
-
+#pad{
+  height: 350px;
+}
+.container{
+  width: 90%;
+}
+// .card_overlay{
+//   display: flex;
+//   text-align: center;
+// }
+.card{
+  background: #ffffff;
+  border-radius: 4px;
+  border: none;
+  height: auto;
+  position: relative;
+  padding-bottom: 70px;
+  box-shadow: 1px 1px 1px;
+  .join_button{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  // padding: 20px;
+}
+#avatar-card{
+  position: absolute;
+  right: 10px;
+  top: -40px;
+  .avatar{
+    border: white 3px solid;
+    width: 80px;
+    border-radius: 50%;
+  }
+}
+#header-body{
+  // position: relative;
+  vertical-align: center;
+  h4{
+    font-family: 'roboto';
+    padding: 10px 90px 0px 10px;
+    font-size: 25px;
+    font-weight: !important lighter;
+  }
+  p{
+    padding: 0px 10px;
+    margin: 4px;
+  }
+}

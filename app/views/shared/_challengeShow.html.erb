@@ -1,0 +1,15 @@
+  <div class="card">
+    <div id="avatar-card">
+      <%= cl_image_tag("BennoSqAvatar-01.png", class: "avatar") %>
+    </div>
+    <div id="header-body">
+      <h4><lighter><%= @challenge.title %></lighter></h4>
+      <p><strong>Start: </strong><%= @challenge.start_date %></p>
+      <p><strong>Duration: </strong><%= @challenge.duration_days %> days</p>
+      <p><strong>Dollarydoos: </strong>$<%= @challenge.cost %></p>
+      <p><strong>Challenge Details</strong></p>
+      <p><%= @challenge.description %></p>
+    </div>
+      <a class='join_button' <%= link_to 'JOIN', new_user_session_path %> </a>
+  </div>
+

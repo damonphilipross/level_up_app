@@ -1,7 +1,26 @@
+<div id="screen">
+<div class="influencer_img">
+    <img src=<%= @challenge.photo_url %> >
+    <div class='image-gradient'>
 
-
+    </div>
+</div>
+<div id="pad">
+</div>
 <div class="container">
-  <img src=<%= @challenge.photo_url %>>
+
+  <div class="card-overlay">
+    <div>
+      <%= render "shared/challengeShow" %>
+
+      <div class="row">
+        <ol>
+          <%= render "shared/leaderboardcard" %>
+        </ol>
+      </div>
+
+      
+      <img src=<%= @challenge.photo_url %>>
   <h1>the LEADERboard</h1>
   <div class="card-deck">
     <div class="row">
@@ -10,7 +29,9 @@
       <ol>
         <%= render "shared/leaderboardcard" %>
       </ol>
+
+    
     </div>
   </div>
 </div>
-
+</div>

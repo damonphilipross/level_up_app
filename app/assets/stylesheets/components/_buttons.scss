@@ -1,40 +1,42 @@
-#home_login{
-  position: static;
-  z-index: 1;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
+// #home_login{
+//   position: fixed;
+//   z-index: 1;
+//   display: flex;
+//   justify-content: space-around;
+// }
+// .login_signup_button{
+//   position: absolute;
+//   top: 20px;
+//   padding-left: 20px;
+//   padding-right: 20px;
+//   background: #FF0040;
+//   border-radius: 22px;
+//   font-family: HelveticaNeue-Bold;
+//   font-size: 14px;
+//   color: #FFFFFF;
+//   text-align: center;
+//   text-decoration: none;
+//   cursor: pointer;
+//   border: none;
+//   display: inline-block;
 
-.login_signup_button{
-  position: static;
 
-  padding-left: 20px;
-  padding-right: 20px;
-  background: #FF0040;
-  border-radius: 22px;
-
-  font-family: HelveticaNeue-Bold;
-  font-size: 14px;
-  color: #FFFFFF;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  border: none;
-  display: inline-block;
-
-  box-shadow: 0px 0px 2px;
-}
+//   box-shadow: 0px 0px 2px;
+// }
 .join_button{
   background: #FF0040;
-  border-radius: 22px;
-
-  font-family: CenturyGothic-Bold;
+  border-radius: 30px;
+  padding: 20px 35px 20px 35px;
+  font-family: Roboto-Bold;
   font-size: 14px;
   color: #FFFFFF;
   text-align: left;
 }
+// <<<<<<< cloudinary_and_buttons
+// .upvote_button{
+//   background: #FF0040;
+// }
+// =======
 
 .upvote-btn{
   background:none;
