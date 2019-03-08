@@ -1,6 +1,7 @@
 class Challenge < ApplicationRecord
   belongs_to :user
   has_many :daily_goals, dependent: :destroy
+  has_many :daily_goal_tasks, through: :daily_goals
   has_many :participants, dependent: :destroy
   mount_uploader :photo, PhotoUploader
 
