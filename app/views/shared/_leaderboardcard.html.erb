@@ -1,6 +1,5 @@
-
+<div id="leaderboard-card">
   <% @participants.each do |participant| %>
-
     <div class="notification">
       <img src=<%= participant.user.photo %> class="avatar-large"/>
       <div class="notification-content">
@@ -16,4 +15,4 @@
     </div>
 
   <% end %>
-
+</div>
