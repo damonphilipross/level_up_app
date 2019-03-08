@@ -2,6 +2,7 @@ class Challenge < ApplicationRecord
   belongs_to :user
   has_many :daily_goals, dependent: :destroy
   has_many :participants, dependent: :destroy
+  mount_uploader :photo, PhotoUploader
 
   validates :start_date, presence: true
   validates :description, presence: true

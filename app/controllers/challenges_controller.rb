@@ -33,6 +33,7 @@ class ChallengesController < ApplicationController
       :duration_days,
       :price_cents,
       :photo_url,
+      :photo,
       :description
     )
   end
