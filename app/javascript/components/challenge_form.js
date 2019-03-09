@@ -2,6 +2,7 @@ const clickNext1 = () => {
   const click_on_button1 = document.getElementById("next_button1");
 click_on_button1.addEventListener("click", (event) => {
   // grab the divs
+  console.log("click")
   const page_1 = document.getElementById("page1");
   const page_2 = document.getElementById("page2")
   // Hide page 1 and show page 2
