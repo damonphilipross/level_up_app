@@ -1,4 +1,5 @@
 class DailyGoalsController < ApplicationController
+
   before_action :set_challenge
 
   def index
@@ -12,7 +13,7 @@ class DailyGoalsController < ApplicationController
   end
 
   def new
-    @challenge = Challenge.find(params[:challenge_id])
+
   end
 
   def create
@@ -38,7 +39,7 @@ class DailyGoalsController < ApplicationController
       end
       counter += 1
     end
-    redirect_to root_path
+    redirect_to challenge_daily_goals_path(@challenge)
   end
 
   private

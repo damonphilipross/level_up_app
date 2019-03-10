@@ -1,15 +1,12 @@
+<h2>Daily Goal Calendar for <%= current_user.email %></h2>
 
-<div>
-  <% @daily_goals.each do |goal| %>
-    <div class="notification">
-      <div class="notification-content">
-        Day: <%= goal.day %>
-        <% goal.daily_goal_tasks.each do |task|%>
-        <p><strong>
-          <%= task.description %>
-        </strong></p>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-</div>
+
+        <p>scroll challenges</p>
+        <% @daily_goals.each do |daily_goal| %>
+                 <p> <%= daily_goal.day %><br> </p>
+                  <% daily_goal.daily_goal_tasks.each do |task| %>
+                   <p> <%= task.description %> </p>
+                  <% end %>
+
+              <% end %>
+            </div>
