@@ -68,6 +68,14 @@ User.last(10).each do |user|
     participant = Participant.new
     participant.user = user
     participant.challenge = Challenge.all.sample
+    @task_result = TaskResult.new
+    participant.challenge.daily_goals.each do |goal|
+      goal.daily_goal_tasks.each do |task|
+        @task_result.daily_goal_task = task
+        @task_result.participant = @participant
+        @task_result.complete = false
+      end
+    end
     participant.save!
   end
 end

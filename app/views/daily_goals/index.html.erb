@@ -1,0 +1,15 @@
+
+<div>
+  <% @daily_goals.each do |goal| %>
+    <div class="notification">
+      <div class="notification-content">
+        Day: <%= goal.day %>
+        <% goal.daily_goal_tasks.each do |task|%>
+        <p><strong>
+          <%= task.description %>
+        </strong></p>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
