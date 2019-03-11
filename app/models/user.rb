@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :handle, uniqueness: true, presence: true
+  acts_as_voter
 end
