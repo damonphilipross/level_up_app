@@ -14,31 +14,31 @@ Challenge.destroy_all
 User.destroy_all
 DailyGoal.destroy_all
 DailyGoalTask.destroy_all
+TaskResult.destroy_all
 Badge.destroy_all
 ParticipantPhoto.destroy_all
-TaskResult.destroy_all
 puts "starting seed"
 user = User.create(handle: "dale_d", email: "dale@hindle.com", password: "password", influencer: true)
 user = User.create(handle: "damon_d", email: "damon@damon.com", password: "password", influencer: true)
 user = User.create(handle: "ben_b", email: "ben@ben.com", password: "password", influencer: true)
 puts "creating users"
 10.times do
-
   user = User.create!(
     handle: Faker::Internet.username,
     email: Faker::Internet.email,
     password: "password",
     photo: Faker::Avatar.image)
-  # user.save
+  user.save!
 end
 puts "creating challenges creating daily goals"
 20.times do
   metric_verb = Faker::Verb.base
+  duration_days = rand(1..50)
   challenge = Challenge.new(
-    title: "#{rand(50)} day #{metric_verb} challenge",
+    title: "#{duration_days} day #{metric_verb} challenge",
     description: Faker::Quote.yoda,
     start_date: Faker::Date.forward(50),
-    duration_days: rand(1..30),
+    duration_days: duration_days,
     cost: rand(500),
     photo_url: Faker::LoremPixel.image("600x400", false, 'sports'),
     price_cents: rand(50000),
@@ -64,11 +64,25 @@ end
 
 puts "creating participations"
 User.last(10).each do |user|
+  challenge_array = Challenge.all.to_a
   5.times do
     participant = Participant.new
     participant.user = user
-    participant.challenge = Challenge.all.sample
+    participant.challenge = challenge_array.pop
+    # challenge_array = challenge_array.delete(participant.challenge)
+    @task_result = TaskResult.new
+    participant.challenge.daily_goals.each do |goal|
+      goal.daily_goal_tasks.each do |task|
+        @task_result.daily_goal_task = task
+        @task_result.participant = participant
+        @task_result.complete = false
+        puts "saving task"
+        @task_result.save!
+      end
+    end
+    puts user.id
     participant.save!
+    puts "participant saved"
   end
 end
 

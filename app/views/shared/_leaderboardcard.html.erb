@@ -10,9 +10,8 @@
         <% end %>
       </div>
         <%= form_tag challenge_upvotr_path, method: :post, remote: true do %>
-          <%= button_tag "<i class='fas fa-arrow-up'></i>".html_safe, class: "upvote-btn",  value: "#{participant.id}"%>
+          <%= button_tag "<i class='fa fa-arrow-up'></i>".html_safe, class: "upvote-btn",  value: "#{participant.id}"%>
         <% end %>
     </div>
-
   <% end %>
 </div>

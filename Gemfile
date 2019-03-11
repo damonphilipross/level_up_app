@@ -21,12 +21,12 @@ gem 'money-rails'
 gem 'cloudinary', '~> 1.9.1'
 gem 'ahoy_matey'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'acts_as_votable', '~> 0.12.0'
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
 group :development, :test do
-  gem 'carrierwave', '~> 1.2'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
@@ -34,6 +34,4 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
   gem 'cloudinary', '~> 1.9.1'
-
-
 end
