@@ -6,5 +6,4 @@ clickNext1();
 clickNext2();
 headerCallback();
 
-
 collapse();
