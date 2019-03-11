@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     # after creating a challenge we redirect to the index of the daily goals
     # Here we can select the a daily goal, go the the show page and add daily goal tasks
     resources :daily_goals, only: [ :index, :new, :create, :show ] do
-      resources :daily_goals_tasks, only: [ :index ]
+      resources :daily_goals_tasks, only: [ :index ] do
+        resources :participant_photos, only: [ :index, :new ]
+      end
     end
   end
   resources :daily_goals, only: [ :show ] do

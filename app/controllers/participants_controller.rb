@@ -23,7 +23,7 @@ class ParticipantsController < ApplicationController
     if @participant.save
       redirect_to challenge_participants_path
     else
-      render 'new'
+      flash[:notice] = "You can't do that"
     end
   end
 
@@ -40,4 +40,14 @@ class ParticipantsController < ApplicationController
       end
     end
   end
+
+  def check_user
+    tester = true
+    @participants = Participant.where(challenge_id: params[:challenge_id])
+    @participants.each do |x|
+      tester = false if x.user_id == current_user.id
+    end
+    return tester
+  end
+  helper_method :check_user
 end
