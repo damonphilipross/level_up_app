@@ -1,4 +1,5 @@
 
+
   <div class="text-center second-color-grey">
    <h2>Daily Goal Calendar for <%= @challenge.title %></h2>
    <h3> Created by <%= current_user.handle %></h3>
@@ -10,13 +11,13 @@
      <a class="btn btn-success calendar-button-off"> Delete </a>
    </div>
    <!-- this jus helps make the nav bar stickness smooth -->
-<div class="calendar-placeholder"></div>
+      <div class="calendar-placeholder"></div>
 
 
 
       <% counter = 0 %>
       <div class="calendar-card">
-        <% @daily_goals.each do |daily_goal| %>
+        <% @daily_goals.reverse.each do |daily_goal| %>
         <div class="calendar-black-border">
             <h3> Day <%= daily_goal.day %> </h3>
              <div class="calendar-edit"> <%= link_to 'Edit', edit_challenge_daily_goal_path(@challenge, daily_goal.day) %></div>
@@ -26,7 +27,7 @@
             <% task_counter = 1 %>
             <% daily_goal.daily_goal_tasks.each do |task| %>
 
-<<<<<<< HEAD
+
               <h4><%= task_counter %>. <%= task.description %></h4>
               <p><%=  task.task_points %> Points</p>
               <% task_counter +=1  %>
@@ -35,8 +36,3 @@
         <% end %>
     </div>
   </div>
-
-=======
-              <% end %>
-            </div>
->>>>>>> master

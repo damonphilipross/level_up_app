@@ -1,0 +1,30 @@
+<!-- check if a user already has a photo, if they do execute edit to update the photo -->
+
+<h2> <%= @user.handle %></h2>
+
+
+<% if current_user.photo  %>
+<script>console.log("profile picture existing")</script>
+  <p>Click below to update your profile photo</p>
+  <%= simple_form_for @user, url: pages_profile_add_picture_path, method: :patch do |f| %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.button :submit, 'Next', class: "btn-success" %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= link_to 'Back', :back %>
+
+  <% end %>
+
+  <% else %>
+
+
+  <%= simple_form_for @user, url: pages_profile_add_picture_path, method: :patch do |f| %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.button :submit, 'Next', class: "btn-success" %>
+  <%= link_to 'Back', :back %>
+
+  <% end %>
+
+
+<% end %>
