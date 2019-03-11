@@ -53,7 +53,7 @@
 }
 #avatar-card{
   position: absolute;
-  right: 10px;
+  right: 20px;
   top: -40px;
   .avatar{
     border: white 3px solid;
@@ -67,13 +67,13 @@
   vertical-align: center;
   h4{
     font-family: 'Roboto', sans-serif;
-    padding: 10px 90px 0px 10px;
-    font-size: 25px;
+    padding: 20px 50px 0px 20px;
+    font-size: 23px;
     font-weight: !important lighter;
   }
   p{
     font-family: 'Roboto', sans-serif;
-    padding: 0px 10px;
+    padding: 0px 20px;
     margin: 4px;
   }
 }
@@ -102,9 +102,49 @@
   background-color: #ccc;
 }
 
-/* Style the collapsible content. Note: hidden by default */
-.content {
-  display: none;
-  overflow: hidden;
-  background-color: white;
+.challenge-card-meta {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  background: rgb(210,210,210);
+
+  // span {
+  //   width: 33%;
+  //   position: relative;
+  //   text-align: center;
+
+  //   &:after {
+  //     content: '';
+  //     position: absolute;
+  //     width: 5px;
+  //     height: 5px;
+  //     border-radius: 50%;
+  //     background-color: #222;
+  //     right: 0;
+  //     top: 10px;
+  //   }
+
+  //   &:first-child {
+  //     text-align: left;
+  //   }
+  //   &:last-child {
+  //     text-align: right;
+
+  //     &:after {
+  //       display: none;
+  //     }
+  //   }
+  // }
 }
+.challenge_desc{
+  color: rgb(100,100,100);
+}
+// =======
+/* Style the collapsible content. Note: hidden by default */
+// .content {
+//   display: none;
+//   overflow: hidden;
+//   background-color: white;
+// >>>>>>> master
+// }
