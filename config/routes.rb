@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     # Here we can select the a daily goal, go the the show page and add daily goal tasks
     resources :daily_goals, only: [ :index, :new, :create, :edit, :update, :destroy ]
   end
-  resources :daily_goals, only: [ :show ] do
+  resources :daily_goals, only: [ :show, :edit ] do
     resources :daily_goals_tasks, only: [ :edit, :update, :destroy, :new, :create ]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

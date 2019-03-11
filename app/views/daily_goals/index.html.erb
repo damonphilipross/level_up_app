@@ -1,5 +1,4 @@
 
-
   <div class="text-center second-color-grey">
    <h2>Daily Goal Calendar for <%= @challenge.title %></h2>
    <h3> Created by <%= current_user.handle %></h3>
@@ -20,6 +19,7 @@
         <% @daily_goals.each do |daily_goal| %>
         <div class="calendar-black-border">
             <h3> Day <%= daily_goal.day %> </h3>
+             <div class="calendar-edit"> <%= link_to 'Edit', edit_challenge_daily_goal_path(@challenge, daily_goal.day) %></div>
             <% current_day = @challenge.start_date + counter %>
             <%= current_day %>
             <%  counter += 1 %>

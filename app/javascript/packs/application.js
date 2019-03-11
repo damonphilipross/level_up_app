@@ -1,8 +1,6 @@
 import "bootstrap";
-import { clickNext1 } from '../components/challenge_form';
-import { clickNext2 } from '../components/challenge_form';
-import { stickyHeader } from '../components/challenge_calendar';
+import { clickNext1, clickNext2 } from '../components/challenge_form';
+import { headerCallback } from '../components/challenge_calendar';
 clickNext1();
 clickNext2();
-stickyHeader();
-
+headerCallback();

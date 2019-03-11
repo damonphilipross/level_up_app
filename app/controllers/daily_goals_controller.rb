@@ -1,11 +1,12 @@
 class DailyGoalsController < ApplicationController
-  before_action :set_challenge, only: [:new, :create, :index, :edit]
+  before_action :set_challenge, only: [:new, :create, :index]
   def index
     @daily_goals = DailyGoal.where(challenge_id: params[:challenge_id])
+
+
   end
-
   def edit
-
+    @daily_goal = DailyGoal.where(challenge_id: params[:challenge_id])
   end
 
   def new
