@@ -1,7 +1,10 @@
 import "bootstrap";
-import { clickNext1 } from '../components/challenge_form';
-import { clickNext2 } from '../components/challenge_form';
+import { clickNext1, clickNext2 } from '../components/challenge_form';
+import { headerCallback } from '../components/challenge_calendar';
+import { collapse } from '../components/challenge_collapse';
 clickNext1();
 clickNext2();
-import { collapse } from '../components/challenge_collapse';
+headerCallback();
+
+
 collapse();
