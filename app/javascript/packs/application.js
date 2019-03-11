@@ -5,6 +5,4 @@ import { collapse } from '../components/challenge_collapse';
 clickNext1();
 clickNext2();
 headerCallback();
-
-
 collapse();
