@@ -38,6 +38,8 @@
             <p><%= @challenge.description %></p>
           </div>
         </div>
-      <a class='join_button' <%= link_to 'JOIN', new_user_session_path %> </a>
-  </div>
+      <%= simple_form_for :participant do |f| %>
+        <%= f.button :submit, 'Join', class: "join_button" %>
+      <% end %>
+</div>
 <% end %>

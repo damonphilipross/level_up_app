@@ -1,13 +1,24 @@
 class DailyGoalsController < ApplicationController
+
   before_action :set_challenge
-  def new
+
+  def index
     @challenge = Challenge.find(params[:challenge_id])
+    @daily_goals = DailyGoal.all.where(challenge_id: params[:challenge_id]).order(day: :asc)
+  end
+
+  def show
+    @daily_goal = DailyGoal.find(params[:id])
+    @daily_goal_tasks = DailyGoalTask.where(daily_goal_id: @daily_goal.id)
+  end
+
+  def new
+
   end
 
   def create
     goals_hash = daily_goal_params.to_h
     duration = @challenge.duration_days
-
     # For this challenge
     # Each day should get a daily goal object
     # Each daily goal object should get all the tasks defined in the goals hash
@@ -28,7 +39,7 @@ class DailyGoalsController < ApplicationController
       end
       counter += 1
     end
-    redirect_to root_path
+    redirect_to challenge_daily_goals_path(@challenge)
   end
 
   private
