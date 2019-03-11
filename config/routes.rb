@@ -1,6 +1,7 @@
 
 Rails.application.routes.draw do
 
+
  devise_for :users
  root to: 'pages#home'
  resources :challenges, only: [ :create, :edit, :index, :new ] do
@@ -14,5 +15,7 @@ Rails.application.routes.draw do
  resources :daily_goals, only: [ :show ] do
    resources :daily_goals_tasks, only: [ :edit, :update, :destroy, :new, :create, :index ]
  end
+ get "pages/profile", to: "pages#profile"
+ patch "pages/profile/add_picture", to: "pages#add_picture"
  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

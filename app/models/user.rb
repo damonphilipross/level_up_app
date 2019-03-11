@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   validates :handle, uniqueness: true, presence: true
   acts_as_voter
+  mount_uploader :photo, PhotoUploader
 end
