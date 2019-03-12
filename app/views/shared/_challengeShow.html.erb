@@ -23,11 +23,11 @@
             <p class="challenge_desc"><%= @challenge.description %></p>
         </div>
       </div>
+      <%= link_to "Task Results", challenge_task_results_path, class: "join_button" %>
     </div>
   </div>
 
 <% else %>
-
   <div class="card">
     <div id="avatar-card">
       <%= cl_image_tag("mi0f9vlnq5ufbw3dxivp.jpg", class: "avatar") %>
