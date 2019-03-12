@@ -1,16 +1,5 @@
 /* Style the header */
-.calendar-black-border {
-  // width: 500px;
-border-top:1px solid black;
-padding-bottom: 10px;
-padding: 16px;
-
-}
 // styles every second a different background color
-.calendar-black-border:nth-child(even) {
-  background-color: #fafafa;
-
-}
 .calendar-header {
   // padding: 10px 16px;
   // background: #555;
@@ -52,3 +41,60 @@ padding: 16px;
 // .calendar-header a {
 //   width: 85px;
 // }
+
+.calendar-cards {
+  position: relative;
+
+  &:after {
+    content: '';
+    left: 38px;
+    top: 23px;
+    width: 4px;
+    background: black;
+    bottom: 0;
+    position: absolute;
+  }
+}
+
+.calendar-card {
+  position: relative;
+  padding: 16px 16px 16px 75px;
+  text-align: left;
+
+  &:nth-child(odd) {
+    background-color: #fff;
+  }
+}
+.calendar-card__day-number {
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  background: black;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  z-index: 5;
+}
+.calendar-card__header {
+  margin-top: 11px;
+  font-size: 24px;
+}
+.calendar-card__points {
+  text-align: center;
+  font-size: 10px;
+  text-transform: uppercase;
+  strong {
+    font-size: 20px;
+  }
+}
+.calendar-card__task-title {
+  display:flex;
+  font-weight: bold;
+}
+.calendar-card__task {
+  font-size: 16px;
+  margin-bottom: 10px;
+}

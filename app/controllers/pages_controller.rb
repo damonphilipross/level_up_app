@@ -6,22 +6,24 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
-
   end
 
   def add_picture
     @user = current_user
     @user.update(profile_params)
-
+    redirect_to pages_profile_path
   end
 
   def create
   end
 
+  def contact
+  end
+
   private
 
   def profile_params
-    params.require(:user).permit(:photo)
+    params.require(:user).permit(:photo, :handle)
   end
 
 end
