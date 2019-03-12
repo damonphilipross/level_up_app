@@ -25,5 +25,21 @@ function headerCallback() {
     window.onscroll = function() {stickyHeader(header)};
   };
 }
+
+
+const editMode = () => {
+  const edit_button = document.getElementById("edit-button");
+  if (edit_button) {
+    edit_button.addEventListener("click", (event) => {
+      console.log("test");
+      // grab the div
+      const edit_bar = document.getElementById("edit-bar");
+      // Hide page 2 and show page 3
+      edit_bar.style.display = "";
+      // page_3.style.display = "";
+    });
+  }
+};
+
 // When the user scrolls the page, execute myFunction
 export { headerCallback };
