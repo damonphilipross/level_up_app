@@ -33,7 +33,7 @@
       <div class="challenge-card-meta">
         <span><lighter><%= @challenge.duration_days %> days</lighter></span>
         <span><lighter><%= @challenge.start_date.to_s(:long) %></lighter></span>
-        <span><lighter>$<%= @challenge.cost %></lighter></span>
+        <span><lighter>$<%= @challenge.price_cents %></lighter></span>
       </div>
       <div class="js-challenge-description-abstract">
         <p class="challenge_desc"><%= @challenge.description.truncate(80) %> <button class="js-challenge-description-show-btn collapsible">More...</button></p>
@@ -51,8 +51,8 @@
 
 <% end %>
 
-<<script>
-  const collapse = () => {
+
+<script>
 // var coll = document.getElementsByClassName("collapsible");
 // var i;
 
@@ -81,6 +81,6 @@
 fullElement.classList.add('hide');
     abstractElement.classList.remove('hide');
   });
-}
-export { collapse };
+
 </script>
+
