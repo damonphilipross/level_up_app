@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   def add_picture
     @user = current_user
     @user.update(profile_params)
-
+    redirect_to pages_profile_path
   end
 
   def create
@@ -21,7 +21,7 @@ class PagesController < ApplicationController
   private
 
   def profile_params
-    params.require(:user).permit(:photo)
+    params.require(:user).permit(:photo, :handle)
   end
 
 end
