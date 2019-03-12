@@ -31,15 +31,16 @@ const editMode = () => {
   const edit_button = document.getElementById("edit-button");
   if (edit_button) {
     edit_button.addEventListener("click", (event) => {
-      console.log("test");
-      // grab the div
-      const edit_bar = document.getElementById("edit-bar");
-      // Hide page 2 and show page 3
-      edit_bar.style.display = "";
-      // page_3.style.display = "";
+      console.log("edit button clicked");
+      // grab the div by using the id
+      const edit_bars = document.querySelectorAll(".edit-bar-mode");
+      edit_bars.forEach ( (editBar) => {
+      editBar.style.display = "";
+
+      })
     });
   }
 };
 
 // When the user scrolls the page, execute myFunction
-export { headerCallback };
+export { headerCallback, editMode };
