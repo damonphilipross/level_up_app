@@ -3,13 +3,6 @@
   <div class="text-center second-color-grey">
    <h2>Daily Goal Calendar for <%= @challenge.title %></h2>
    <h3> Created by <%= current_user.handle %></h3>
-
-   <div class="calendar-header" id="myCalendarHeader">
-    <a class="btn btn-success calendar-button-on"> Display </a>
-     <a class="btn btn-success calendar-button-off"> Edit </a>
-      <a class="btn btn-success calendar-button-off"> Add </a>
-     <a class="btn btn-success calendar-button-off"> Delete </a>
-   </div>
    <!-- this jus helps make the nav bar stickness smooth -->
       <div class="calendar-placeholder"></div>
 
@@ -34,5 +27,12 @@
             <% end %>
           </div>
         <% end %>
+
     </div>
+   <div class="calendar-header" id="myCalendarHeader">
+    <a class="btn_calender calendar-button-on">Display</a>
+     <a class="btn_calender calendar-button-off">Edit</a>
+      <a class="btn_calender calendar-button-off">Add</a>
+     <a class="btn_calender calendar-button-off">Delete</a>
+   </div>
   </div>
