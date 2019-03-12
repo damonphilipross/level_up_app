@@ -6,9 +6,13 @@
     <div class="hamburger_btn"></div>
   </button>
   <div id="myDropdown" class="dropdown-content">
-    <a href="#home">profile</a>
-    <a href="#about">log out</a>
-    <a href="#contact">Contact</a>
+    <%= link_to 'Profile', pages_profile_path %>
+    <%= link_to 'Log In', new_user_session_path %>
+    <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+    <%= link_to 'Contact', pages_contact_path %>
+
+
+
   </div>
 <!-- </div> -->
 

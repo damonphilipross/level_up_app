@@ -8,11 +8,10 @@
   <%= f.input :handle %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
-  <%= f.button :submit, 'Update Photo', class: "btn-success" %>
+  <%= f.button :submit, 'Update', class: "btn-success" %>
   <%= link_to 'Back', :back %>
+
 <% end %>
-
-
-
+ <%= button_to 'Password Reset', edit_user_registration_path, method: :get, class: "btn-success" %>
 
 

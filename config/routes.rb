@@ -18,5 +18,6 @@ Rails.application.routes.draw do
  end
  get "pages/profile", to: "pages#profile"
  patch "pages/profile/add_picture", to: "pages#add_picture"
+ get "pages/contact", to: "pages#contact"
  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

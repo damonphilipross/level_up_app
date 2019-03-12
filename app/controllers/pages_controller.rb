@@ -6,7 +6,6 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
-
   end
 
   def add_picture
@@ -16,6 +15,9 @@ class PagesController < ApplicationController
   end
 
   def create
+  end
+
+  def contact
   end
 
   private
