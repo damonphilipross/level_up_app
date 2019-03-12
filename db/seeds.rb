@@ -22,7 +22,7 @@ user = User.create(handle: "dale_d", email: "dale@hindle.com", password: "passwo
 user = User.create(handle: "damon_d", email: "damon@damon.com", password: "password", influencer: true)
 user = User.create(handle: "ben_b", email: "ben@ben.com", password: "password", influencer: true)
 puts "creating users"
-10.times do
+15.times do
   user = User.create!(
     handle: Faker::Internet.username,
     email: Faker::Internet.email,
@@ -61,7 +61,6 @@ puts "creating challenges creating daily goals"
     daily_goal_tasks.save!
   end
 end
-
 puts "creating participations"
 User.last(10).each do |user|
   challenge_array = Challenge.all.to_a
@@ -76,15 +75,63 @@ User.last(10).each do |user|
         @task_result.daily_goal_task = task
         @task_result.participant = participant
         @task_result.complete = false
-        puts "saving task"
         @task_result.save!
       end
     end
     puts user.id
     participant.save!
-    puts "participant saved"
   end
 end
+puts "creating special challenge lol ;)"
+metric_verb = Faker::Verb.base
+duration_days = rand(1..50)
+challenge = Challenge.new(
+  title: "40 days and 40 nights body transformation challenge",
+  description: "This is our core product. This is what we have built our reputation on. Effective, efficient, and fun training. The foundation of our successful training programs are based on strength work. You NEED to lift weights. That's why at Levelup Industrial we ensure that anyone from a beginner to an advanced lifter will progress closer towards their specific goals.
+  At Levelup Industrial we believe that technique is key, you have to earn the ability to lift, and from this you then earn the ability to lift heavier. We teach you this in a non intimidating environment, with world class equipment, and world class trainers.",
+  start_date: Faker::Date.forward(50),
+  duration_days: duration_days,
+  cost: rand(500),
+  photo_url: "https://unsplash.com/photos/AkEr0jc5Lvs",
+  price_cents: rand(50000)
+)
+
+challenge.user = User.first(3).sample
+challenge.save!
+i = 0
+challenge.duration_days.times do
+  i = i + 1
+  daily_goal = DailyGoal.new(
+    day: i,
+  )
+  daily_goal.challenge = challenge
+  daily_goal.save!
+  daily_goal_tasks = DailyGoalTask.new(
+    description: Faker::Company.bs,
+    task_points: rand(20),
+  )
+  daily_goal_tasks.daily_goal = daily_goal
+  daily_goal_tasks.save!
+end
+user_array = User.all.to_a
+10.times do
+    participant = Participant.new
+    participant.user = user_array.pop
+    participant.challenge = challenge
+    @task_result = TaskResult.new
+    participant.challenge.daily_goals.each do |goal|
+      goal.daily_goal_tasks.each do |task|
+        @task_result.daily_goal_task = task
+        @task_result.participant = participant
+        @task_result.complete = false
+        @task_result.save!
+      end
+    end
+    puts user.id
+    participant.save!
+end
+
+
 
 puts "creating badges"
 Badge.create!(
