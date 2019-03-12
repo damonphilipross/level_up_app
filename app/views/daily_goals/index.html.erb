@@ -1,28 +1,37 @@
-<div class="text-center second-color-grey">
-  <h2>Daily Goal Calendar for <%= @challenge.title %></h2>
-  <h3> Created by <%= current_user.handle %></h3>   <div class="calendar-header" id="myCalendarHeader">
-   <a class="btn btn-success calendar-button-on"> Display </a>
-    <a class="btn btn-success calendar-button-off"> Edit </a>
-     <a class="btn btn-success calendar-button-off"> Add </a>
-    <a class="btn btn-success calendar-button-off"> Delete </a>
-  </div>
-  <!-- this jus helps make the nav bar stickness smooth -->
-     <div class="calendar-placeholder"></div>      <% counter = 0 %>
-     <div class="calendar-card">
-       <% @daily_goals.reverse.each do |daily_goal| %>
-       <div class="calendar-black-border">
-           <h3> Day <%= daily_goal.day %> </h3>
-            <div class="calendar-edit"> <%= link_to 'Edit', edit_challenge_daily_goal_path(@challenge, daily_goal.day) %></div>
-           <% current_day = @challenge.start_date + counter %>
-           <%= current_day %>
-           <%  counter += 1 %>
-           <% task_counter = 1 %>
-           <% daily_goal.daily_goal_tasks.each do |task| %>
-            <h4><%= task_counter %>. <%= task.description %></h4>
-             <p><%=  task.task_points %> Points</p>
-             <% task_counter +=1  %>
-           <% end %>
-         </div>
-       <% end %>
+  <div class="text-center second-color-grey">
+   <h2>Daily Goal Calendar for <%= @challenge.title %></h2>
+   <h3> Created by <%= current_user.handle %></h3>
+   <!-- this jus helps make the nav bar stickness smooth -->
+      <div class="calendar-placeholder"></div>
+
+
+
+      <% counter = 0 %>
+      <div class="calendar-card">
+        <% @daily_goals.reverse.each do |daily_goal| %>
+        <div class="calendar-black-border">
+            <h3> Day <%= daily_goal.day %> </h3>
+             <div class="calendar-edit"> <%= link_to 'Edit', edit_challenge_daily_goal_path(@challenge, daily_goal.day) %></div>
+            <% current_day = @challenge.start_date + counter %>
+            <%= current_day %>
+            <%  counter += 1 %>
+            <% task_counter = 1 %>
+            <% daily_goal.daily_goal_tasks.each do |task| %>
+
+
+              <h4><%= task_counter %>. <%= task.description %></h4>
+              <p><%=  task.task_points %> Points</p>
+              <% task_counter +=1  %>
+            <% end %>
+          </div>
+        <% end %>
+
+    </div>
+   <div class="calendar-header" id="myCalendarHeader">
+    <a class="btn_calender calendar-button-on">Display</a>
+     <a class="btn_calender calendar-button-off">Edit</a>
+      <a class="btn_calender calendar-button-off">Add</a>
+     <a class="btn_calender calendar-button-off">Delete</a>
    </div>
- </div>
+  </div>
+
