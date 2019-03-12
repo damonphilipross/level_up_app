@@ -1,8 +1,10 @@
   <!-- daily goal index e.g. the CHALLENGE CALENDAR -->
 
   <div class="text-center second-color-grey">
-   <h2>Daily Goal Calendar for <%= @challenge.title %></h2>
-   <h3> Created by <%= current_user.handle %></h3>
+   <h3>Daily Goal Calendar for <%= @challenge.title %></h3>
+   <div class="created-by">
+    <h4> Created by <%= current_user.handle %></h4>
+   </div>
       <% counter = 0 %>
       <div class="calendar-cards">
         <% @daily_goals.reverse.each do |daily_goal| %>
