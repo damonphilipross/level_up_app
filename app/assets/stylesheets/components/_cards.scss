@@ -12,19 +12,14 @@
   bottom: 0;
 }
 .influencer_img{
-  background-size: cover !important;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // object-fit: cover;
   position: fixed;
-  // max-width: 100;
-  // width: 100%;
-  // background-size: contain;
-  // background-repeat: no-repeat;
-  // object-fit: scale-down;
   z-index: 0;
   top: 0px;
+  // background-size: cover !important;
+  width: 100%;
+  img{
+    width: 100%;
+  }
 }
 #pad{
   height: 350px;
@@ -53,14 +48,14 @@
 }
 #avatar-card{
   position: absolute;
-  right: 20px;
-  top: -40px;
+  right: -22px;
+  top: -33px;
   .avatar{
     border: white 3px solid;
     border-top-color: white;
     width: 80px;
     border-radius: 50%;
-  }
+   }
 }
 #header-body{
   // position: relative;

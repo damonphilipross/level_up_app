@@ -3,6 +3,7 @@
   <div class="card">
     <div id="avatar-card">
       <%= cl_image_tag("mi0f9vlnq5ufbw3dxivp.jpg", class: "avatar") %>
+
     </div>
     <div id="header-body">
       <div class="js-challenge-description-abstract">
@@ -17,7 +18,7 @@
           <div class="challenge-card-meta">
             <span><lighter><%= @challenge.duration_days %> days</lighter></span>
             <span><lighter><%= @challenge.start_date.to_s(:long) %></lighter></span>
-            <span><lighter>$<%= @challenge.cost %></lighter></span>
+            <span><lighter>$<%= @challenge.price_cents %></lighter></span>
           </div>
             <p class="challenge_desc"><%= @challenge.description %></p>
         </div>
@@ -36,7 +37,7 @@
       <div class="challenge-card-meta">
         <span><lighter><%= @challenge.duration_days %> days</lighter></span>
         <span><lighter><%= @challenge.start_date.to_s(:long) %></lighter></span>
-        <span><lighter>$<%= @challenge.cost %></lighter></span>
+        <span><lighter>$<%= @challenge.price_cents %></lighter></span>
       </div>
       <div class="js-challenge-description-abstract">
         <p class="challenge_desc"><%= @challenge.description.truncate(80) %> <button class="js-challenge-description-show-btn collapsible">More...</button></p>
