@@ -1,4 +1,3 @@
-const collapse = () => {
 // var coll = document.getElementsByClassName("collapsible");
 // var i;
 
@@ -14,18 +13,23 @@ const collapse = () => {
 //   });
 // }
 
-  const abstractElement = document.querySelector('.js-challenge-description-abstract');
-  const fullElement = document.querySelector('.js-challenge-description-full');
-  const showButton = document.querySelector('.js-challenge-description-show-btn');
 
-  abstractElement.addEventListener('click', () => {
-    fullElement.classList.remove('hide');
-    abstractElement.classList.add('hide');
-  });
 
-  fullElement.addEventListener('click', () => {
-fullElement.classList.add('hide');
-    abstractElement.classList.remove('hide');
-  });
-}
-export { collapse };
+
+
+// const collapse = () => {
+//   const abstractElement = document.querySelector('.js-challenge-description-abstract');
+//   const fullElement = document.querySelector('.js-challenge-description-full');
+//   const showButton = document.querySelector('.js-challenge-description-show-btn');
+
+//   abstractElement.addEventListener('click', () => {
+//     fullElement.classList.remove('hide');
+//     abstractElement.classList.add('hide');
+//   });
+
+//   fullElement.addEventListener('click', () => {
+// fullElement.classList.add('hide');
+//     abstractElement.classList.remove('hide');
+//   });
+// }
+// export { collapse };

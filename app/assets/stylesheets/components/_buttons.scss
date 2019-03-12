@@ -32,6 +32,25 @@
   color: #FFFFFF;
   text-align: left;
 }
+.task_results_btn{
+  // font-family: 'Roboto', sans-serif;
+  // background: $red;
+  // border-radius: 30px;
+  // padding: 10px 35px 10px 35px;
+  // font-size: 14px;
+  // color: #FFFFFF;
+  // text-align: left;
+    font-family: 'Roboto', sans-serif;
+  background: $red;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #FFFFFF;
+  text-align: left;
+  border: 1px solid #FF0040;
+  margin-right: 10px;
+
+}
 .upvote-btn{
   background: $red;
   color: white;
