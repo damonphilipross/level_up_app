@@ -83,13 +83,36 @@
 #highlight{
   color: $red;
 }
-#home_join_btn{
-  position: sticky;
-  top: 400px;
-}
 #graph_header{
   position: static;
   padding: 10px;
   color: $red;
   height: 40px;
 }
+
+
+
+#home-pg-btns {
+  // padding: 10px 16px;
+  // background: #555;
+  // color: #f1f1f1;
+  position: fixed;
+  bottom: 10px;
+  left: 10%;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px 20px;
+  margin-bottom: 10px;
+  border: none;
+  background: $red;
+  border-radius: 40px;
+}
+#hm-out-btns{
+  color: white;
+  background: none;
+  border: none;
+}
+
+

@@ -28,4 +28,13 @@
         </p>
       </div>
     </div>
-
+    <div id="home-pg-btns">
+      <div>
+        <%= simple_form_for :participant do |f| %>
+        <%= f.button :submit, 'JOIN', id: "hm-out-btns" %>
+        <% end %>
+      </div>
+      <div id="hm-out-btns">
+        <%= link_to 'CHALLENGES', challenges_path, id: "hm-out-btns" %>
+      </div>
+   </div>
