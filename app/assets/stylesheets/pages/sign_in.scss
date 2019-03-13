@@ -1,0 +1,33 @@
+.login-form{
+  background: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+}
+
+.form-control{
+  border: !important none;
+  border-bottom-color: gray;
+  border-bottom-style: none;
+  border-bottom-width: medium;
+  border-bottom: 2px solid #ccc;
+  box-shadow: !important none;
+  padding: 0;
+  background-color: white;
+  transition: none;
+}
+// .form-inputs{
+//   border: !important none;
+//   border-bottom-color: gray;
+//   border-bottom-style: none;
+//   border-bottom-width: medium;
+//   border-bottom: 2px solid #ccc;
+//   box-shadow: !important none;
+//   padding: 0;
+//   background-color: white;
+//   transition: none;
+// }
+
+

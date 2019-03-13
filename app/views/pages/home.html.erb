@@ -1,5 +1,6 @@
-<div id="header">
-  <div id="logo">
+<container class='white'>
+<div class="header">
+  <div class="logo">
     <%= cl_image_tag("https://res.cloudinary.com/levelup265/image/upload/v1552353916/LevelUpLogoText.png", width: 100) %>
   </div>
 </div>
@@ -8,33 +9,46 @@
 </div>
   <!-- sticky graphic -->
 <div class='sticky_headline'>
-  <h2>Join our influencer programme.</h2>
+  <h2>Join our influencer programme</h2>
 </div>
 
-<div id="home_pad">
-
-<%= cl_image_tag("https://res.cloudinary.com/levelup265/image/upload/v1552436076/motivation_graph-01.png", class: "pad_imaage") %>
+<div class="home_pad">
+  <%= cl_image_tag("https://res.cloudinary.com/levelup265/image/upload/v1552436076/motivation_graph-01.png", class: "pad_imaage") %>
 </div>
-    <div id="the_pitch">
-      <div id="the_pitch_content">
-        <h1>Why & What is levelUP?</h1>
-        <p>
-          <span id='highlight'>levelUP</span> is bridging the gap between <span id='highlight'>Instagram Influencers</span> and their followers. Creating unique challenges to appeal to your fan base allows you a simple, quick and <span id='highlight'>valuable income</span> stream whilst providing a platform to grow and engage with each user.<br>
-          The <span id='highlight'>levelUP</span> platform engages your users with the goal achieving platform designed specifically to leverage your inspirational leadership. The intuitive sign up process creates goal accountability and a support group from the outset. The real magic begins once your challenge commences. The market leading, <span id='highlight'>patented levelUP dopamine</span> direct delivery system will send your users into goal achieving overdrive.<br>
-          levelUP is the market disrupter before the market even existed. Take your influencer business and levelUP!<br><br>
-            <span id='highlight'>levelUP</span> is bridging the gap between <span id='highlight'>Instagram Influencers</span> and their followers. Creating unique challenges to appeal to your fan base allows you a simple, quick and <span id='highlight'>valuable income</span> stream whilst providing a platform to grow and engage with each user.<br>
-          The <span id='highlight'>levelUP</span> platform engages your users with the goal achieving platform designed specifically to leverage your inspirational leadership. The intuitive sign up process creates goal accountability and a support group from the outset. The real magic begins once your challenge commences. The market leading, <span id='highlight'>patented levelUP dopamine</span> direct delivery system will send your users into goal achieving overdrive.<br>
-          levelUP is the market disrupter before the market even existed. Take your influencer business and levelUP!
-        </p>
-      </div>
+<div class="the_pitch">
+  <div class="the_pitch_content" class="container">
+    <h1>Why & What is levelUP?</h1>
+    <div class="row">
+      <p>
+      <span class='highlight'>levelUP</span> is bridging the gap between <span class='highlight'>Instagram Influencers</span> and their followers. Creating unique challenges to appeal to your fan base allows you a simple, quick and <span class='highlight'>valuable income</span> stream whilst providing a platform to grow and engage with each user.<br>
+      The <span class='highlight'>levelUP</span> platform engages your users with the goal achieving platform designed specifically to leverage your inspirational leadership. The intuitive sign up process creates goal accountability and a support group from the outset. The real magic begins once your challenge commences. The market leading, <span class='highlight'>patented levelUP dopamine</span> direct delivery system will send your users into goal achieving overdrive.<br>
+      levelUP is the market disrupter before the market even existed. Take your influencer business and levelUP!
+      </p>
     </div>
-    <div id="home-pg-btns">
-      <div>
-        <%= simple_form_for :participant do |f| %>
-        <%= f.button :submit, 'JOIN', id: "hm-out-btns" %>
-        <% end %>
-      </div>
-      <div id="hm-out-btns">
-        <%= link_to 'CHALLENGES', challenges_path, id: "hm-out-btns" %>
-      </div>
-   </div>
+  </div>
+</div>
+<div>
+  <h5>
+    FEATURED CHALLENGES
+  </h5>
+</div>
+<div>
+
+</div>
+
+
+
+<div class="home-pg-btns">
+  <div>
+    <%= link_to 'SIGN UP', new_user_session_path, class: "hm-out-btns" %>
+  </div>
+  <div>
+    <%= link_to 'CHALLENGES', challenges_path, class: "hm-out-btns" %>
+  </div>
+</div>
+
+
+<container>
+
+
+
