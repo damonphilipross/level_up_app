@@ -10,7 +10,7 @@ class DailyGoalsController < ApplicationController
 
   def create
     goals_hash = daily_goals_params.to_h
-    raise
+
     duration = @challenge.duration_days
     # For this challenge
     # Each day should get a daily goal object

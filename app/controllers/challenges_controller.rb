@@ -6,6 +6,7 @@ class ChallengesController < ApplicationController
   def create
     @challenge = Challenge.new(challenge_params)
     @challenge.user = current_user
+    @challenge.avatar_photo = current_user.photo
     if @challenge.save
       redirect_to new_challenge_daily_goal_path(@challenge)
     else
