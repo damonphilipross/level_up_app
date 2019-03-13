@@ -4,7 +4,7 @@
 
 .alert {
   margin: 0;
-  text-align: center;
+  text-align: left;
   color: white;
 }
 .alert-info {
@@ -12,4 +12,7 @@
 }
 .alert-warning {
   background: $red;
+}
+.alert-dismissible{
+  padding-right: 100px;
 }
