@@ -25,5 +25,22 @@ function headerCallback() {
     window.onscroll = function() {stickyHeader(header)};
   };
 }
+
+
+const editMode = () => {
+  const edit_button = document.getElementById("edit-button");
+  if (edit_button) {
+    edit_button.addEventListener("click", (event) => {
+      console.log("edit button clicked");
+      // grab the div by using the id
+      const edit_bars = document.querySelectorAll(".edit-bar-mode");
+      edit_bars.forEach ( (editBar) => {
+      editBar.style.display = "";
+
+      })
+    });
+  }
+};
+
 // When the user scrolls the page, execute myFunction
-export { headerCallback };
+export { headerCallback, editMode };

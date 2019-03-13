@@ -1,23 +1,16 @@
 class DailyGoalsController < ApplicationController
-
-  before_action :set_challenge, only: [:new, :create, :index]
+  before_action :set_challenge, only: [:new, :create, :index, :edit, :update]
 
   def index
-
     @daily_goals = DailyGoal.where(challenge_id: params[:challenge_id])
-
-  end
-
-  def edit
-    @daily_goal = DailyGoal.where(challenge_id: params[:challenge_id])
   end
 
   def new
-
   end
 
   def create
-    goals_hash = daily_goal_params.to_h
+    goals_hash = daily_goals_params.to_h
+    raise
     duration = @challenge.duration_days
     # For this challenge
     # Each day should get a daily goal object
@@ -42,13 +35,42 @@ class DailyGoalsController < ApplicationController
     redirect_to challenge_daily_goals_path(@challenge)
   end
 
+  def edit
+    @daily_goal = DailyGoal.find(params[:id])
+    @daily_goal_tasks = DailyGoalTask.where(daily_goal_id: @daily_goal)
+  end
+
+  def update
+    tasks_hash = daily_goal_task_params.to_h
+
+    tasks_hash.each do |_key, value|
+      task_to_update = DailyGoalTask.find(value[:id])
+      render :edit unless task_to_update.update(
+        description: value[:description],
+        task_points: value[:task_points]
+      )
+    end
+
+    redirect_to challenge_daily_goals_path(@challenge)
+
+    # daily_goal_task_id = goals_hash.values[0].values[0][:id].to_i
+    # daily_goal_task = DailyGoalTask.find(daily_goal_task_id)
+    # daily_goal_task.description = goals_hash.values[0].values[0][:description]
+    # daily_goal_task.task_points = goals_hash.values[0].values[0][:task_points]
+    # daily_goal_task.save
+  end
+
   private
 
   def set_challenge
     @challenge = Challenge.find(params[:challenge_id])
   end
 
-  def daily_goal_params
+  def daily_goal_task_params
+    params.require(:daily_goal).require(:daily_goal_tasks_attributes).permit!
+  end
+
+  def daily_goals_params
     params.require(:daily_goals).permit!
   end
 end
