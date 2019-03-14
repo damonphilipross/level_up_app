@@ -1,7 +1,7 @@
 <div id="leaderboard-card">
   <% @participants.each do |participant| %>
     <div class="notification">
-      <%= cl_image_tag(current_user.photo, class: "avatar") %>
+      <%= cl_image_tag(participant.user.photo, class: "avatar") %>
       <div class="notification-content">
         <p><strong><%= participant.user.handle %></strong></p>
         <% participant.badges.each do |badge| %>
