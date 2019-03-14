@@ -1,10 +1,6 @@
 
 
   <div class="card">
-    <div id="spots-remaining">
-      <!-- display spots remaining -->
-      <h4> <%= @challenge.total_spots - @challenge.taken_spots %> </h4>
-    </div>
     <div id="avatar-card">
       <%= cl_image_tag(@challenge.avatar_photo, class: "avatar") %>
     </div>
@@ -21,7 +17,7 @@
         <div class="content">
           <p class="challenge_desc"><%= @challenge.description %></p>
         </div>
-      </div>
+
       <% if !check_user %>
       <%= link_to "Task Results", challenge_task_results_path, class: "task_results_btn" %>
       <% else %>
@@ -29,6 +25,10 @@
         <%= f.button :submit, 'Join', class: "join_button" %>
       <% end %>
       <% end %>
+    </div>
+    <div id="spots-remaining">
+      <!-- display spots remaining -->
+      <h5> Spots Remaining: <%= @challenge.total_spots - @challenge.taken_spots %> </h5>
     </div>
   </div>
 <script>
