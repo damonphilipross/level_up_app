@@ -1,6 +1,10 @@
 
 
   <div class="card">
+    <div id="spots-remaining">
+      <!-- display spots remaining -->
+      <h4> <%= @challenge.total_spots - @challenge.taken_spots %> </h4>
+    </div>
     <div id="avatar-card">
       <%= cl_image_tag(@challenge.avatar_photo, class: "avatar") %>
     </div>
@@ -28,8 +32,8 @@
     </div>
   </div>
 <script>
-// var coll = document.getElementsByClassName("collapsible");
 // var i;
+// var coll = document.getElementsByClassName("collapsible");
 
 // for (i = 0; i < coll.length; i++) {
 //   coll[i].addEventListener("click", function() {

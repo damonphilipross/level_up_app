@@ -22,8 +22,9 @@ class ParticipantsController < ApplicationController
       end
     end
     if @participant.save
-      # need to update how many spots are left in the challenge if saved
-      spots_remaining_update
+      # need to update how many spots are taken in the challenge when someone joins
+      update1 = @participant.challenge.taken_spots += 1
+      @participant.challenge.update(taken_spots: update1)
       redirect_to challenge_participants_path
     else
       flash[:notice] = "You can't do that"
@@ -52,11 +53,6 @@ class ParticipantsController < ApplicationController
     end
     return tester
   end
-  def spots_remaining_update
-     @participant.challenge.spots_taken += 1
-     @participant.challenge.spots_taken.save!
-     @participant.challenge.remaining_spots = @participant.challenge.total_spots - @participant.challenge.spots_taken
-     @participant.challenge.remaining_spots.save!
-  end
+
   helper_method :check_user
 end
