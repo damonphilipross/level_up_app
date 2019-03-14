@@ -112,9 +112,9 @@ ActiveRecord::Schema.define(version: 2019_03_13_063914) do
     t.bigint "daily_goal_task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "entry"
     t.string "photo"
     t.text "diary_entry"
-    t.string "entry"
     t.index ["daily_goal_task_id"], name: "index_participant_photos_on_daily_goal_task_id"
     t.index ["participant_id"], name: "index_participant_photos_on_participant_id"
   end
