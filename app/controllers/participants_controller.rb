@@ -22,6 +22,9 @@ class ParticipantsController < ApplicationController
       end
     end
     if @participant.save
+      # need to update how many spots are left in the challenge
+      spots_taken += 1
+
       redirect_to challenge_participants_path
     else
       flash[:notice] = "You can't do that"
