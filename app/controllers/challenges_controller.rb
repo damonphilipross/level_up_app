@@ -8,6 +8,7 @@ class ChallengesController < ApplicationController
     @challenge.user = current_user
     @challenge.avatar_photo = current_user.photo
     if @challenge.save
+      # redirect to the challenge calendar page (daily_goals index)
       redirect_to new_challenge_daily_goal_path(@challenge)
     else
       render :new
@@ -35,7 +36,8 @@ class ChallengesController < ApplicationController
       :price_cents,
       :photo_url,
       :photo,
-      :description
+      :description,
+      :total_spots
     )
   end
 end
