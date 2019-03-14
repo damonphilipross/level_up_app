@@ -2,9 +2,10 @@ class TaskResultsController < ApplicationController
   def index
     @challenge = Challenge.find(params[:challenge_id])
     @participant = Participant.where(user_id: current_user.id)
-    @task_results = TaskResult.where(participant_id: @participant)
     @daily_goal = DailyGoal.where(challenge_id: @challenge)
     @daily_goals_tasks = DailyGoalTask.where(daily_goal_id: @daily_goal)
+    @task_results = TaskResult.where(participant_id: @participant).where(daily_goal_task_id: @daily_goals_tasks)
+
   end
 
   def complete

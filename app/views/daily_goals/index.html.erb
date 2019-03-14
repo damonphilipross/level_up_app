@@ -7,7 +7,7 @@
    </div>
       <% counter = 0 %>
       <div class="calendar-cards">
-        <% @daily_goals.each do |daily_goal| %>
+        <% @daily_goals.reverse.each do |daily_goal| %>
         <% current_day = @challenge.start_date + counter %>
         <div class="calendar-card">
           <div class="calendar-card__day-number">
