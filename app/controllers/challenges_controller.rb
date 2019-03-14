@@ -37,7 +37,7 @@ class ChallengesController < ApplicationController
       :photo_url,
       :photo,
       :description,
-      :spots
+      :total_spots
     )
   end
 end
