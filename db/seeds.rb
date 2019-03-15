@@ -90,7 +90,7 @@ challenge = Challenge.new(
   description: "This is our core product. This is what we have built our reputation on. Effective, efficient, and fun training. The foundation of our successful training programs are based on strength work. You NEED to lift weights. That's why at Levelup Industrial we ensure that anyone from a beginner to an advanced lifter will progress closer towards their specific goals.
   At Levelup Industrial we believe that technique is key, you have to earn the ability to lift, and from this you then earn the ability to lift heavier. We teach you this in a non intimidating environment, with world class equipment, and world class trainers.",
   start_date: Faker::Date.forward(50),
-  duration_days: duration_days,
+  duration_days: 40,
   cost: rand(500),
   photo_url: "https://unsplash.com/photos/AkEr0jc5Lvs",
   price_cents: rand(50000)

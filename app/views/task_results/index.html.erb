@@ -16,5 +16,52 @@
   <% end %>
 </div>
 
+  <!-- daily goal index e.g. the CHALLENGE CALENDAR -->
+
+  <div class="text-center second-color-grey">
+   <h3>Daily Goal Calendar for <%= @challenge.title %></h3>
+   <div class="created-by">
+    <h4> Created by <%= current_user.handle %></h4>
+   </div>
+      <% counter = 0 %>
+      <div class="calendar-cards">
+        <% @daily_goals.each do |daily_goal| %>
+        <% current_day = @challenge.start_date + counter %>
+        <div class="calendar-card">
+          <div class="calendar-card__day-number">
+            <%= daily_goal.day %>
+          </div>
+            <h3 class="calendar-card__header"> Day <%= daily_goal.day %> - <%= current_day.strftime("%b %d ") %></h3>
+             <div class="edit-bar-mode" style="display:none"> <%= link_to 'Edit', edit_challenge_daily_goal_path(@challenge, daily_goal) %> <i class="far fa-edit"></i>
+             </div>
+              <!-- counter for the date addition above -->
+              <% counter += 1 %>
+              <!-- counter to display the numeral infront of the task number -->
+              <% task_counter = 1 %>
+              <% daily_goal.daily_goal_tasks.each do |task| %>
+                <div class="row calendar-card__task">
+                  <div class="col-xs-8 calendar-card__task-title">
+                    <span><%= task_counter %>.</span>
+                    <span><%= task.description %></span>
+                  </div>
+                  <div class="col-xs-4 text-right">
+                    <div class="calendar-card__points">
+                      <strong><%=  task.task_points %></strong><br /> points</div>
+                    </div>
+                  </div>
+                  <% task_counter +=1  %>
+              <% end %>
+               </div>
+        <% end %>
+        </div>
+      </div>
+   <div class="calendar-header" id="myCalendarHeader">
+     <%= link_to 'Leaderboard', challenge_participants_path(@challenge) %>
+     <a class="btn_calender calendar-button-off" id="edit-button">Edit</a>
+   </div>
+  </div>
+
+
+
 
 
