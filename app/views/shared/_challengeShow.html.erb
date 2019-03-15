@@ -7,8 +7,15 @@
     <div id="header-body">
       <h4><lighter><%= @challenge.title %></lighter></h4>
       <div class="challenge-card-meta">
-        <span><lighter><%= @challenge.duration_days %> days</lighter></span>
-        <span><lighter><%= @challenge.start_date.to_s(:long) %></lighter></span>
+        <% if !check_user %>
+          <span><lighter><%= @challenge.duration_days %> days</lighter></span>
+          <span><lighter><%= @challenge.start_date.to_s(:long) %></lighter></span>
+        <% else %>
+          <span><lighter><%= @challenge.duration_days %> days</lighter></span>
+          <span><lighter><%= @challenge.start_date.to_s(:long) %></lighter></span>
+          <span><lighter>$<%= @challenge.price_cents %></lighter></span>
+
+        <% end %>
       </div>
       <div class="js-challenge-description-abstract">
         <p class="challenge_desc"><%= @challenge.description.truncate(80) %> <button class="js-challenge-description-show-btn collapsible">More...</button></p>

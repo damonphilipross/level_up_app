@@ -1,13 +1,15 @@
 <div id="leaderboard-card">
+    <%= cl_image_tag(
+  'https://res.cloudinary.com/levelup265/image/upload/v1552537537/crown-01.png', class: "the-crown") %>
   <% @participants.each do |participant| %>
     <div class="notification">
-      <%= cl_image_tag(current_user.photo, class: "avatar") %>
+      <%= cl_image_tag(participant.user.photo, class: "avatar-smallish") %>
       <div class="notification-content">
         <p><strong><%= participant.user.handle %></strong></p>
         <% participant.badges.each do |badge| %>
           <img src=<%= badge.icon_name %>>
         <% end %>
-      </div>
+      </div class="upvote-card-section">
         <%= form_tag challenge_upvotr_path, method: :post, remote: true do %>
           <%= button_tag class: "upvote-btn",  value: "#{participant.id}" do %>
             <p class="upboats"><%= participant.total_points %></p>
