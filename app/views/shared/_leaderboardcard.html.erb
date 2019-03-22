@@ -3,7 +3,9 @@
   'https://res.cloudinary.com/levelup265/image/upload/v1552537537/crown-01.png', class: "the-crown") %>
   <% @participants.each do |participant| %>
     <div class="notification">
+
       <%= cl_image_tag(participant.user.photo, class: "avatar-smallish") %>
+
       <div class="notification-content">
         <p><strong><%= participant.user.handle %></strong></p>
         <% participant.badges.each do |badge| %>

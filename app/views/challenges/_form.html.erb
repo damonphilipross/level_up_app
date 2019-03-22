@@ -28,6 +28,7 @@
     <h4>Page two: The Basics </h4>
     <%= f.input :start_date, as: :date, html5: true, label: 'Start Date', placeholder: "Kim's 30 Day Body Tranformation Challenge" %>
     <%= f.input :duration_days, label: 'Challenge duration', placeholder: 'How many days?' %>
+    <%= f.input :total_spots, label: 'Spots available', placeholder: 'Max. number of participants' %>
     <button type="button" name="next_button2" class="btn-success" id="next_button2">Next
     </button>
     <%= link_to 'Back', :back %>

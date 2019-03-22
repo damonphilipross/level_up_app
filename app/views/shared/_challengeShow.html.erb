@@ -24,7 +24,7 @@
         <div class="content">
           <p class="challenge_desc"><%= @challenge.description %></p>
         </div>
-      </div>
+
       <% if !check_user %>
       <%= link_to "Task Results", challenge_task_results_path, class: "task_results_btn" %>
       <% else %>
@@ -33,10 +33,14 @@
       <% end %>
       <% end %>
     </div>
+    <div id="spots-remaining">
+      <!-- display spots remaining -->
+      <h5> Spots Remaining: <%= @challenge.total_spots - @challenge.taken_spots %> </h5>
+    </div>
   </div>
 <script>
-// var coll = document.getElementsByClassName("collapsible");
 // var i;
+// var coll = document.getElementsByClassName("collapsible");
 
 // for (i = 0; i < coll.length; i++) {
 //   coll[i].addEventListener("click", function() {

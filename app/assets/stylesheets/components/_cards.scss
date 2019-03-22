@@ -148,3 +148,10 @@
 //   background-color: white;
 // >>>>>>> master
 // }
+#spots-remaining{
+  position: relative;
+  z-index: 12;
+  right: 10px;
+  color: #eb3347;
+  text-align: right;
+}
